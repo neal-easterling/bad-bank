@@ -1,13 +1,13 @@
 
 import NavBar from "./components/navbar";
+import HashRouter from "./components/context";
 
 function Spa(){
 
   return (
-    <>
-      <h1>Welcome to Bad Bank!</h1>
+    <HashRouter>
       <NavBar />
-    </>
+    </HashRouter>
   )
 
 }
