@@ -1,5 +1,5 @@
-import { HashRouter } from "react-router";
-import { Route } from "react-router";
-import { Link } from "react-router";
+import { HashRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default HashRouter;
