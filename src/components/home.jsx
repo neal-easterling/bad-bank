@@ -1,8 +1,13 @@
 
-function Home(){
+import { useContext } from "react";
+import { UserContext } from "./context";
 
+function Home(){
+  const ctx = useContext(UserContext)
   return(
-    <h1>Home Page Component</h1>
+    <h1>Home <br />
+      {JSON.stringify(ctx)}
+    </h1>
   )
 
 }
