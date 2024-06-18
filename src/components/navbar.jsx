@@ -12,16 +12,44 @@ function NavBar(){
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav ">
             <li className="nav-item">
-              <a className="nav-link" href="#/create-account/">Create Account</a>
+              <a 
+                className="nav-link" 
+                href="#/create-account/" 
+                data-bs-toggle="tooltip" 
+                data-bs-placement="bottom" 
+                title="Create a new account">
+                  Create Account
+              </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/deposit/">Deposit</a>
+              <a 
+                className="nav-link" 
+                href="#/deposit/"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="bottom" 
+                title="Deposit to your account.">
+                  Deposit
+              </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/withdraw/">Withdraw</a>
+              <a 
+                className="nav-link" 
+                href="#/withdraw/"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="bottom" 
+                title="Withdraw from your account">
+                  Withdraw
+              </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/alldata/">AllData</a>
+              <a 
+                className="nav-link" 
+                href="#/alldata/"
+                data-bs-toggle="tooltip" 
+                data-bs-placement="bottom" 
+                title="View all user data">
+                  AllData
+              </a>
             </li>
           </ul>
         </div>

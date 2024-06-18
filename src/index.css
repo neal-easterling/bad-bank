@@ -12,4 +12,19 @@ body{
   justify-content: center;
   width: 100%;
   padding: 1rem;
+  min-width: 20rem;
+}
+
+.full-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-width: 25rem;
+  padding-top: 3rem;
+}
+
+.custom{
+  box-shadow: 0 0 10px rgba(50,50,50, 0.3);
 }

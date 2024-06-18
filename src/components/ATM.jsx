@@ -2,12 +2,15 @@ import { Card } from "./context";
 
 function ATM(props){
 
+  const style = {display: "flex", flexDirection:"column", gap:"1rem"};
+
   return (
     <>
     <h1>{props.title}</h1>
     <Card
       bgcolor = {props.color}
-      body={
+      status = {props.status}
+      body={ props.show ? (
         <div className="container" 
           style={
             {
@@ -20,7 +23,7 @@ function ATM(props){
             <h3>Balance</h3>
             <h3>{props.balance}</h3>
           </div>
-          <div style={{display: "flex", flexDirection:"column", gap:"1rem"}}>
+          <div style={style}>
             <h3>{props.title} Amount</h3>
             <input 
               type="input" 
@@ -39,7 +42,12 @@ function ATM(props){
             </button>
           </div>
         </div>
-      }
+      ) : (
+        <div className="container" style={style}>
+          <h5>Success</h5>
+          <button type="submit" className="btn btn-light" onClick={props.clearForm}>{`Make another ${props.title}`}</button>
+        </div>
+      )}
     />
     </>
   )
