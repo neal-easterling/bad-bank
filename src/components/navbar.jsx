@@ -48,7 +48,7 @@ function NavBar(){
                 data-bs-toggle="tooltip" 
                 data-bs-placement="bottom" 
                 title="View all user data">
-                  AllData
+                  All Data
               </a>
             </li>
           </ul>
