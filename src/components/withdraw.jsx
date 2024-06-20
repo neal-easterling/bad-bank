@@ -9,16 +9,35 @@ function Withdraw(){
   const [status, setStatus] = useState('');
   const [show, setShow] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [balance, setBalance] = useState(ctx.users[0].balance);
 
   function validate(value){
-    //if NaN
-      //setStatus error NaN
-      //setShow false
 
-    //if overdraft
-      //setStatus error insufficient funds
-      //setShow false
-    console.log('bs');
+    if(isNaN(value)){
+      setStatus('Please enter numeric values only');
+      setTimeout(()=> setStatus(''), 3000);
+      console.log('not a number');
+      return false;
+    }
+
+    if(value > balance){
+      setStatus('transaction failed: insufficient funds');
+      setTimeout(()=> setStatus(''), 3000);
+      console.log('not a negative number');
+      return false;
+    }
+    console.log('valid withdrawl');
+    return true;
+  }
+
+  function testIsDisabled(){
+    
+    if(withdrawl!==0){
+      setIsDisabled(false);
+      return true;
+    } 
+    setIsDisabled(true);
+    return false;
   }
 
   function clearForm(){
@@ -27,12 +46,17 @@ function Withdraw(){
   }
 
   function handleChange(value){
-    console.log(value);
+    setWithdrawl(value);
+    testIsDisabled();
   }
 
   function handleWithdrawl(){
     // ADD LOGIC FOR VALIDATION & WITHDRAWL FROM BALLANCE
-    console.log(withdrawl);
+    if(validate(withdrawl)){
+      ctx.users[0].balance = ctx.users[0].balance - parseFloat(withdrawl);
+      setBalance(balance-parseFloat(withdrawl));
+      setShow(false);
+    }
   }
 
   return (
@@ -43,7 +67,7 @@ function Withdraw(){
     show={show}
     balance = {ctx.users[0].balance}
     value = {withdrawl}
-    onChange = {handleChange}
+    handleChange = {handleChange}
     setValue = {setWithdrawl}
     isDisabled = {isDisabled}
     clearForm = {clearForm}
