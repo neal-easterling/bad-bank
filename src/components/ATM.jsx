@@ -1,3 +1,4 @@
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 import { Card } from "./context";
 
 function ATM(props){
@@ -31,12 +32,13 @@ function ATM(props){
               id="deposit-amount" 
               placeholder="Enter Deposit Amount" 
               value={props.value}
-              onChange={props.setValue}
+              onChange={e=>props.handleChange(e.currentTarget.value)}
             />
             <button 
               type="submit" 
               className="btn btn-light"
               onClick={props.handleValue}
+              disabled={props.isDisabled}
             >
               {props.title}
             </button>

@@ -26,6 +26,10 @@ function Withdraw(){
     setShow(true);
   }
 
+  function handleChange(value){
+    console.log(value);
+  }
+
   function handleWithdrawl(){
     // ADD LOGIC FOR VALIDATION & WITHDRAWL FROM BALLANCE
     console.log(withdrawl);
@@ -39,6 +43,7 @@ function Withdraw(){
     show={show}
     balance = {ctx.users[0].balance}
     value = {withdrawl}
+    onChange = {handleChange}
     setValue = {setWithdrawl}
     isDisabled = {isDisabled}
     clearForm = {clearForm}

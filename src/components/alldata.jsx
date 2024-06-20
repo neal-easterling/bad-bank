@@ -12,7 +12,7 @@ function AllData(){
       txtcolor="black"
       body={
         <div className="container">
-          <h1>AllData</h1>
+          <h1>All Data</h1>
           <table className="table">
             <thead>
               <tr>
@@ -24,7 +24,7 @@ function AllData(){
             <tbody>
               {ctx.users.map((value, index, array) => {
                 return (
-                  <tr>
+                  <tr id={index}>
                     <td>{value.email}</td>
                     <td>{value.name}</td>
                     <td>{value.password}</td>
