@@ -1,7 +1,6 @@
 import ATM from "./ATM";
-import { useContext } from "react";
-import { UserContext, Card } from "./context";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext} from "./context";
 
 function Withdraw(){
   const ctx = useContext(UserContext);
@@ -17,6 +16,13 @@ function Withdraw(){
       setStatus('Please enter numeric values only');
       setTimeout(()=> setStatus(''), 3000);
       console.log('not a number');
+      return false;
+    }
+
+    if(value < 0 ){
+      setStatus('please use only positive numbers');
+      setTimeout(()=> setStatus(''), 3000);
+      console.log('not a negative number');
       return false;
     }
 

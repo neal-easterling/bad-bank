@@ -15,19 +15,19 @@ function AllData(){
           <h1>All Data</h1>
           <table className="table">
             <thead>
-              <tr>
-                <th scope="col">Email</th>
-                <th scope="col">Name</th>
-                <th scope="col">Password</th>
+              <tr id='head-row'>
+                <th id='head-row-email' scope="col">Email</th>
+                <th id='head-row-name' scope="col">Name</th>
+                <th id='head-row-password' scope="col">Password</th>
               </tr>
             </thead>
             <tbody>
               {ctx.users.map((value, index, array) => {
                 return (
                   <tr id={index}>
-                    <td>{value.email}</td>
-                    <td>{value.name}</td>
-                    <td>{value.password}</td>
+                    <td id={index+'-1'} >{value.email}</td>
+                    <td id={index+'-2'}>{value.name}</td>
+                    <td id={index+'-3'}>{value.password}</td>
                   </tr>
                 )
                 
