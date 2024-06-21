@@ -32,7 +32,7 @@ function CreateAccount(){
   }
 
   function testIsDisabled(){
-    if(name!=='' && email !== '' && password!==''){
+    if(name!=='' || email !== '' || password!==''){
       setIsDisabled(false);
     }
   }
