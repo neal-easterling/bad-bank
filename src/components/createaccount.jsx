@@ -54,6 +54,7 @@ function CreateAccount(){
     if(password.length < 8){
       setStatus('Password must be at least 8 characters long');
       setTimeout(()=> setStatus(''), 3000);
+      return;
     }
     ctx.users.push({name, email, password, balance:100});
     setShow(false);
