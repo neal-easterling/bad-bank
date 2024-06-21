@@ -12,6 +12,16 @@ function NavBar(){
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbar-toggler1">
           <ul className="navbar-nav ">
+          <li className="nav-item">
+              <a 
+                className="nav-link" 
+                href="#" 
+                data-bs-toggle="tooltip" 
+                data-bs-placement="bottom" 
+                title="Go to Home Page">
+                  Home
+              </a>
+            </li>
             <li className="nav-item">
               <a 
                 className="nav-link" 
