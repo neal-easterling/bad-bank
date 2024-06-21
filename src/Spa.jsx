@@ -13,7 +13,7 @@ function Spa(){
     <HashRouter>
         <NavBar />
         <div className="container-fluid full-page">
-          <UserContext.Provider value={{users:[{name: 'Neal', email: 'neal@abc.com', password: 'secret', balance: 100 }]}}>
+          <UserContext.Provider value={{users:[{name: 'Neal', email: 'neal@abc.com', password: 'secret42', balance: 100 }]}}>
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="/create-account/" element = {<CreateAccount />} />

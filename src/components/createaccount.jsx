@@ -39,7 +39,7 @@ function CreateAccount(){
 
   function validate(field, label){
     if(!field){
-      setStatus('Error: ' + label);
+      setStatus('Error: ' + label + ' is blank.');
       setTimeout(()=> setStatus(''), 3000);
       return false;
     }
@@ -51,6 +51,10 @@ function CreateAccount(){
     if(!validate(name, 'name')) return;
     if(!validate(email, 'email')) return;
     if(!validate(password, 'password')) return;
+    if(password.length < 8){
+      setStatus('Password must be at least 8 characters long');
+      setTimeout(()=> setStatus(''), 3000);
+    }
     ctx.users.push({name, email, password, balance:100});
     setShow(false);
   }
